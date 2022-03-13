@@ -23,6 +23,7 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.TimeZone;
 
 public class CalendarOperations {
 
@@ -203,7 +204,7 @@ public class CalendarOperations {
 
         ContentResolver cr = ctx.getContentResolver();
 
-        String currentTimeZone = java.util.Calendar.getInstance().getTimeZone().getDisplayName();
+        String currentTimeZone = TimeZone.getDefault().getID();
         String eventId = event.getEventId() != null ? event.getEventId() : null;
         ContentValues values = new ContentValues();
         values.put(Events.DTSTART, event.getStartDate());

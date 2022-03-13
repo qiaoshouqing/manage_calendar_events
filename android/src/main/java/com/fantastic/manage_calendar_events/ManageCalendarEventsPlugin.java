@@ -142,6 +142,7 @@ public class ManageCalendarEventsPlugin implements FlutterPlugin, ActivityAware,
             String eventId = call.argument("eventId");
             long minutes = Long.parseLong(call.<String>argument("minutes"));
             operations.addReminder(calendarId, eventId, minutes);
+            result.success(null);
         } else if (call.method.equals("updateReminder")) {
             String calendarId = call.argument("calendarId");
             String eventId = call.argument("eventId");
